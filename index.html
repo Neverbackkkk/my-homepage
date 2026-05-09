@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的个人主页</title>
+  <meta name="description" content="算法基础课程大作业：个人主页与技术博客。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="返回首页">My Homepage</a>
+    <button class="nav-toggle" type="button" aria-label="打开导航" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="site-nav" aria-label="主导航">
+      <a href="#about">关于我</a>
+      <a href="#learning">学习方向</a>
+      <a href="#projects">学习记录</a>
+      <a href="#blog">博客</a>
+      <a href="#contact">联系</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">算法基础课程大作业</p>
+        <h1>你好，我是<span>[你的名字]</span></h1>
+        <p class="hero-text">
+          这是我的个人主页，用来记录算法基础课程学习、技术博客写作，以及我使用 AI Agent 辅助完成项目的过程。
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#blog">阅读第一篇博客</a>
+          <a class="button secondary" href="#projects">查看学习记录</a>
+        </div>
+      </div>
+      <figure class="hero-media">
+        <img src="assets/study-workspace.png" alt="包含代码、算法节点和学习笔记的桌面插画">
+      </figure>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">About</p>
+        <h2>关于我</h2>
+      </div>
+      <div class="two-column">
+        <p>
+          我目前正在学习算法基础、数据结构和基础编程实践。这个主页是我第一次尝试把课程学习、网页制作和 AI Agent 工作流结合起来。
+        </p>
+        <p>
+          这里的文字可以替换成你的真实介绍，例如专业、年级、兴趣方向、正在学习的课程，以及你希望展示给老师和同学的内容。
+        </p>
+      </div>
+    </section>
+
+    <section id="learning" class="section band">
+      <div class="section-heading">
+        <p class="eyebrow">Direction</p>
+        <h2>学习方向与技术兴趣</h2>
+      </div>
+      <div class="interest-grid">
+        <article class="info-card">
+          <h3>算法与数据结构</h3>
+          <p>从排序、查找、递归和动态规划开始，逐步理解如何把实际问题转化为可计算的步骤。</p>
+        </article>
+        <article class="info-card">
+          <h3>AI 辅助编程</h3>
+          <p>学习如何让 AI Agent 阅读需求、规划任务、生成代码、检查结果，并在人的判断下持续修改。</p>
+        </article>
+        <article class="info-card">
+          <h3>知识管理</h3>
+          <p>把课程笔记、代码实践和复盘总结沉淀下来，让学习过程不只是完成作业，也能形成长期积累。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Records</p>
+        <h2>项目展示与学习记录</h2>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item">
+          <span>01</span>
+          <div>
+            <h3>搭建个人主页</h3>
+            <p>完成首页结构、导航、博客入口和基础响应式布局，作为课程大作业的展示入口。</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <span>02</span>
+          <div>
+            <h3>撰写技术博客</h3>
+            <p>围绕 AI Agent 辅助学习和开发，整理从零开始搭建网页的过程、收获和反思。</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <span>03</span>
+          <div>
+            <h3>部署与检查</h3>
+            <p>计划使用 GitHub Pages 发布网页，并检查首页、博客链接和不同屏幕下的阅读体验。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="blog" class="section blog-section">
+      <div class="section-heading">
+        <p class="eyebrow">Blog</p>
+        <h2>技术博客</h2>
+      </div>
+      <article class="blog-card">
+        <div>
+          <p class="blog-meta">第一篇技术博客 · AI Agent 与学习方法</p>
+          <h3>AI Agent 如何帮助我从零搭建个人主页</h3>
+          <p>
+            这篇博客记录了我从阅读作业要求、规划网页结构、生成代码到检查页面效果的过程，也总结了 AI 辅助编程中人需要负责的部分。
+          </p>
+        </div>
+        <a class="button primary" href="blog/first-blog.html">进入博客</a>
+      </article>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="section-heading">
+        <p class="eyebrow">Contact</p>
+        <h2>联系与链接</h2>
+      </div>
+      <div class="contact-list">
+        <a href="mailto:your-email@example.com">your-email@example.com</a>
+        <a href="https://github.com/your-github-name">GitHub: your-github-name</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> [你的名字] · Built with HTML, CSS and AI Agent workflow.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

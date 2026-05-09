@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Agent 如何帮助我从零搭建个人主页</title>
+  <meta name="description" content="第一篇技术博客：记录 AI Agent 辅助完成个人主页的过程与思考。">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html">My Homepage</a>
+    <button class="nav-toggle" type="button" aria-label="打开导航" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="site-nav" aria-label="主导航">
+      <a href="../index.html#about">关于我</a>
+      <a href="../index.html#projects">学习记录</a>
+      <a href="../index.html#blog">博客</a>
+      <a href="../index.html#contact">联系</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="article-page">
+      <a class="back-link" href="../index.html#blog">返回博客列表</a>
+      <header class="article-header">
+        <p class="eyebrow">第一篇技术博客</p>
+        <h1>AI Agent 如何帮助我从零搭建个人主页</h1>
+        <p class="article-summary">
+          这篇文章记录我如何从几乎没有网页开发经验开始，借助 AI Agent 完成个人主页的规划、实现、检查和总结。
+        </p>
+      </header>
+
+      <section>
+        <h2>1. 为什么选择这个主题</h2>
+        <p>
+          这次课程大作业要求我们完成一个个人主页，并在主页中发布第一篇技术博客。对零基础学习者来说，网页开发一开始会显得很陌生：既要理解文件结构，又要知道 HTML、CSS 和部署之间的关系。相比直接复制一整段代码，我更希望通过 AI Agent 的帮助，把任务拆成可以理解的小步骤。
+        </p>
+      </section>
+
+      <section>
+        <h2>2. 我的基本思路</h2>
+        <p>
+          我把这个项目分成四个阶段：先阅读作业要求，确认必须包含个人简介、博客入口和可访问链接；再设计网页结构；然后生成和修改代码；最后检查页面能否正常打开、链接能否跳转、内容是否符合提交要求。
+        </p>
+        <p>
+          这个过程让我意识到，AI Agent 更适合承担“协助者”的角色。它可以快速生成初稿，也可以帮助发现遗漏，但我仍然需要判断内容是否真实、表达是否符合自己，以及最终网页是否真的可用。
+        </p>
+      </section>
+
+      <section>
+        <h2>3. AI Agent 具体帮了什么</h2>
+        <p>
+          在这个项目中，AI Agent 主要帮助我完成了三个方面的工作。第一，它把课程要求整理成了可执行清单。第二，它根据清单生成了网页的基本结构，包括首页、博客页、样式文件和项目说明文档。第三，它帮助我检查链接、页面结构和报告中需要说明的内容。
+        </p>
+        <p>
+          但博客中的个人理解、学习感受和最终取舍不能完全交给 AI。比如我需要自己决定主页展示什么内容、博客要表达什么观点，以及哪些地方还需要替换成真实信息。
+        </p>
+      </section>
+
+      <section>
+        <h2>4. 从零基础角度得到的经验</h2>
+        <p>
+          我认为零基础完成这类项目时，最重要的是不要一开始追求复杂框架。使用 HTML、CSS 和少量 JavaScript 就可以完成一个清晰的个人主页。先让网页能打开，再逐步调整布局和文字，比一开始就追求复杂效果更可靠。
+        </p>
+        <p>
+          另外，写 `AGENTS.md` 这样的项目说明文件很有帮助。它相当于告诉 AI：这个项目的目标是什么、哪些文件重要、完成后要检查什么。这样后续继续修改时，AI 不会只看局部代码，而是能围绕整个作业目标工作。
+        </p>
+      </section>
+
+      <section>
+        <h2>5. 后续可以改进的地方</h2>
+        <p>
+          当前版本已经能满足个人主页和博客入口的基本要求。后续我还可以继续补充真实项目、课程笔记、更多博客文章，并把页面部署到 GitHub Pages。部署完成后，还需要把主页网址和截图整理进作业报告。
+        </p>
+      </section>
+
+      <footer class="article-footer">
+        <p>提示：提交前请把这篇文章中的经历和表达改成你自己的真实过程。</p>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> [你的名字] · First technical blog.</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
