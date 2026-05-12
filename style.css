@@ -555,6 +555,27 @@ h1 span {
   font-weight: 700;
 }
 
+.course-link {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  margin-top: 20px;
+  padding: 0 14px;
+  color: #ffffff;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #3f93df, var(--primary-dark));
+  box-shadow: 0 12px 24px rgba(47, 117, 189, 0.18);
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.course-link:hover {
+  transform: translateY(-2px);
+}
+
 .archive-panel {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
@@ -755,6 +776,67 @@ h1 span {
 
 .article-footer p {
   margin: 0;
+}
+
+.assignment-page {
+  max-width: 1040px;
+}
+
+.assignment-section {
+  margin-bottom: 54px;
+}
+
+.assignment-list {
+  display: grid;
+  gap: 12px;
+}
+
+.assignment-list.compact {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.assignment-item {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  min-height: 72px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, rgba(47, 117, 189, 0.08), transparent 42%),
+    var(--surface);
+  box-shadow: 0 12px 28px rgba(35, 54, 80, 0.08);
+  text-decoration: none;
+}
+
+.assignment-item:hover {
+  border-color: #b8c9dc;
+  box-shadow: 0 18px 38px rgba(35, 54, 80, 0.14);
+  transform: translateY(-2px);
+}
+
+.assignment-item span {
+  display: grid;
+  place-items: center;
+  min-height: 42px;
+  color: var(--primary-dark);
+  border-radius: 8px;
+  background: #dfeaf6;
+  font-weight: 900;
+}
+
+.assignment-item strong {
+  color: var(--text);
+  font-size: 16px;
+}
+
+.assignment-item em {
+  color: var(--muted);
+  font-style: normal;
+  font-size: 14px;
+  white-space: nowrap;
 }
 
 .site-footer {
@@ -1187,7 +1269,8 @@ h1 span {
   .note-hero,
   .split-formula,
   .compare-grid,
-  .insight-grid {
+  .insight-grid,
+  .assignment-list.compact {
     grid-template-columns: 1fr;
   }
 
@@ -1226,5 +1309,14 @@ h1 span {
 
   .operator-diagram {
     padding: 10px;
+  }
+
+  .assignment-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .assignment-item span {
+    width: 76px;
   }
 }
