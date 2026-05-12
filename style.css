@@ -153,6 +153,32 @@ h1 span {
   margin-top: 30px;
 }
 
+.hero-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.hero-metrics span {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  min-height: 38px;
+  padding: 0 12px;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: 0 10px 22px rgba(35, 54, 80, 0.07);
+  font-size: 14px;
+}
+
+.hero-metrics strong {
+  color: var(--primary);
+  font-size: 18px;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -391,6 +417,11 @@ h1 span {
   margin-bottom: 28px;
 }
 
+.section-note {
+  color: var(--muted);
+  font-size: 17px;
+}
+
 .section-heading h2,
 .article-header h1 {
   margin-bottom: 12px;
@@ -411,6 +442,169 @@ h1 span {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
+}
+
+.coursework-section {
+  position: relative;
+}
+
+.coursework-section::before {
+  content: "";
+  position: absolute;
+  top: 48px;
+  right: 6vw;
+  width: min(320px, 34vw);
+  height: 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #d7e7f8, #9ec7ed, #d2dce8);
+  opacity: 0.8;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.course-card {
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(246, 250, 254, 0.94)),
+    var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.course-card::after {
+  content: "";
+  position: absolute;
+  right: -48px;
+  bottom: -48px;
+  width: 150px;
+  height: 150px;
+  border: 28px solid rgba(47, 117, 189, 0.08);
+  border-radius: 50%;
+}
+
+.course-card-top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.course-index,
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.course-index {
+  padding: 0 10px;
+  color: #ffffff;
+  background: var(--primary);
+}
+
+.status-pill {
+  padding: 0 11px;
+  color: var(--primary-dark);
+  border: 1px solid #bfd3e9;
+  background: #edf5fd;
+}
+
+.course-card h3,
+.archive-panel h3 {
+  position: relative;
+  z-index: 1;
+}
+
+.course-card p {
+  position: relative;
+  z-index: 1;
+  color: var(--muted);
+}
+
+.course-tags {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.course-tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 10px;
+  color: #4f6580;
+  border-radius: 8px;
+  background: #edf2f8;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.archive-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+  gap: 24px;
+  align-items: center;
+  margin-top: 18px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(47, 117, 189, 0.08), transparent 38%),
+    #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.archive-panel p {
+  color: var(--muted);
+}
+
+.archive-steps {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.archive-steps li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 42px;
+  padding: 0 12px;
+  color: var(--text);
+  border: 1px solid #d6e2ef;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  font-weight: 700;
+}
+
+.archive-steps span {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  color: var(--primary-dark);
+  border-radius: 8px;
+  background: #dfeaf6;
+  font-size: 12px;
+  font-weight: 800;
 }
 
 .info-card,
@@ -614,8 +808,14 @@ h1 span {
   }
 
   .two-column,
-  .interest-grid {
+  .interest-grid,
+  .course-grid,
+  .archive-panel {
     grid-template-columns: 1fr;
+  }
+
+  .coursework-section::before {
+    display: none;
   }
 
   .blog-card {
@@ -637,12 +837,14 @@ h1 span {
   }
 
   .hero-actions,
+  .hero-metrics,
   .contact-list {
     align-items: stretch;
     flex-direction: column;
   }
 
   .button,
+  .hero-metrics span,
   .contact-list a {
     width: 100%;
   }
@@ -670,5 +872,359 @@ h1 span {
   .blog-card,
   .timeline-item {
     padding: 18px;
+  }
+}
+
+.note-article {
+  max-width: 980px;
+}
+
+.note-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 28px;
+  align-items: end;
+}
+
+.note-hero > *,
+.note-section,
+.formula-card,
+.operator-diagram,
+.flow-diagram {
+  min-width: 0;
+}
+
+.note-article h1 {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.note-article {
+  overflow-x: hidden;
+}
+
+.note-article p,
+.note-article h2,
+.note-article h3,
+.note-overview strong,
+.note-toc a {
+  overflow-wrap: anywhere;
+}
+
+.note-overview,
+.formula-card,
+.note-toc,
+.operator-diagram,
+.flow-diagram,
+.compare-grid > div,
+.insight-grid > div,
+.note-quote {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 14px 34px rgba(35, 54, 80, 0.09);
+}
+
+.note-overview {
+  padding: 20px;
+  border-top: 4px solid var(--primary);
+  background: linear-gradient(180deg, #ffffff, #f3f8fd);
+}
+
+.note-overview span,
+.formula-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.note-overview strong {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--text);
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+.note-overview p,
+.formula-card p,
+.operator-diagram figcaption {
+  margin: 0;
+  font-size: 15px;
+}
+
+.note-toc {
+  position: sticky;
+  top: 82px;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: -12px 0 42px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+}
+
+.note-toc a {
+  padding: 7px 10px;
+  color: var(--primary-dark);
+  border: 1px solid #cfdae7;
+  border-radius: 8px;
+  background: #f7fbff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.note-toc a:hover {
+  color: #ffffff;
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.note-section {
+  position: relative;
+  margin-bottom: 44px;
+  padding-left: 30px;
+  border-left: 2px solid #d6e2ef;
+}
+
+.section-kicker {
+  position: absolute;
+  left: -18px;
+  top: 2px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  color: #ffffff;
+  border-radius: 8px;
+  background: var(--primary);
+  box-shadow: var(--glow);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.note-section h2 {
+  padding-top: 3px;
+}
+
+.formula-card {
+  margin: 22px 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #f9fcff, #edf5fd);
+}
+
+.formula {
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(27px, 5vw, 42px);
+  line-height: 1.25;
+}
+
+.formula.small {
+  font-size: 22px;
+}
+
+.split-formula,
+.compare-grid,
+.insight-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.split-formula {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.compare-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 22px 0;
+}
+
+.compare-grid > div,
+.insight-grid > div {
+  padding: 20px;
+}
+
+.compare-grid h3 {
+  margin-bottom: 8px;
+  color: var(--text);
+  font-size: 18px;
+}
+
+.compare-grid p,
+.insight-grid p {
+  margin-bottom: 0;
+  font-size: 15px;
+}
+
+.operator-diagram {
+  margin: 24px 0;
+  padding: 18px;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(120, 145, 174, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 145, 174, 0.08) 1px, transparent 1px),
+    #fbfdff;
+  background-size: 24px 24px;
+}
+
+.operator-diagram svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.operator-diagram rect {
+  fill: #ffffff;
+  stroke: #cbd8e6;
+  stroke-width: 2;
+}
+
+.operator-diagram .operator-box {
+  fill: #eaf4ff;
+  stroke: var(--primary);
+}
+
+.operator-diagram line {
+  stroke: var(--primary);
+  stroke-width: 3;
+}
+
+.operator-diagram marker path {
+  fill: var(--primary);
+}
+
+.operator-diagram text {
+  fill: var(--muted);
+  font-size: 20px;
+  font-weight: 700;
+  text-anchor: middle;
+}
+
+.operator-diagram .operator-text {
+  fill: var(--primary-dark);
+  font-size: 34px;
+  font-weight: 800;
+}
+
+.operator-diagram .wave {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.operator-diagram .wave.output {
+  stroke: var(--accent);
+}
+
+.flow-diagram {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 12px;
+  align-items: center;
+  margin: 22px 0;
+  padding: 18px;
+  background: #fbfdff;
+}
+
+.flow-diagram div {
+  display: grid;
+  place-items: center;
+  min-height: 76px;
+  padding: 12px;
+  color: var(--text);
+  border: 1px solid #cbd8e6;
+  border-radius: 8px;
+  background: #f2f7fc;
+  font-weight: 800;
+  text-align: center;
+}
+
+.flow-diagram span {
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.insight-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 22px 0;
+}
+
+.insight-grid strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--primary-dark);
+  font-size: 18px;
+}
+
+.note-quote {
+  margin: 24px 0;
+  padding: 20px 22px;
+  color: var(--text);
+  border-left: 4px solid var(--primary);
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+@media (max-width: 860px) {
+  .article-header.note-hero {
+    display: block;
+  }
+
+  .note-overview {
+    margin-top: 22px;
+  }
+
+  .note-hero,
+  .split-formula,
+  .compare-grid,
+  .insight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .note-toc {
+    position: static;
+  }
+
+  .flow-diagram {
+    grid-template-columns: 1fr;
+  }
+
+  .flow-diagram span::after {
+    content: " ↓";
+  }
+}
+
+@media (max-width: 560px) {
+  .note-article h1 {
+    font-size: 34px;
+    line-height: 1.12;
+  }
+
+  .note-section {
+    padding-left: 22px;
+  }
+
+  .section-kicker {
+    left: -15px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .note-toc a {
+    width: 100%;
+  }
+
+  .operator-diagram {
+    padding: 10px;
   }
 }
