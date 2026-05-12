@@ -148,6 +148,30 @@ h1 span {
   overflow-wrap: anywhere;
 }
 
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  max-width: min(760px, 100%);
+  gap: 2px;
+}
+
+.hero-title .title-line {
+  display: block;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+.hero-title .title-line-center {
+  align-self: center;
+  color: var(--primary);
+  font-size: clamp(42px, 8vw, 90px);
+  line-height: 0.95;
+}
+
+.hero-title .title-line-end {
+  align-self: flex-end;
+}
+
 .hero-text {
   max-width: 640px;
   color: var(--muted);
@@ -937,6 +961,16 @@ h1 span {
   h1 {
     font-size: 36px;
     overflow-wrap: anywhere;
+  }
+
+  .hero-title {
+    max-width: 100%;
+    gap: 4px;
+  }
+
+  .hero-title .title-line-center {
+    align-self: center;
+    font-size: clamp(30px, 9vw, 42px);
   }
 
   .hero-copy,
