@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Agent 如何帮助我从零搭建个人主页</title>
-  <meta name="description" content="第一篇技术博客：记录 AI Agent 辅助完成个人主页的过程与思考。">
-  <link rel="stylesheet" href="../style.css">
+  <title>神经算子如何求解 PDE：从 DeepONet 到 Koopman Neural Operator</title>
+  <meta name="description" content="第一篇技术博客：整理神经算子求解 PDE 的基本思路，并记录从 DeepONet 到 Koopman Neural Operator 的学习理解。">
+  <link rel="stylesheet" href="../style.css?v=20260512-dark">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="../index.html">My Homepage</a>
+    <a class="brand" href="../index.html">Han Zifei</a>
     <button class="nav-toggle" type="button" aria-label="打开导航" aria-expanded="false">
       <span></span>
       <span></span>
@@ -28,64 +28,70 @@
       <a class="back-link" href="../index.html#blog">返回博客列表</a>
       <header class="article-header">
         <p class="eyebrow">第一篇技术博客</p>
-        <h1>AI Agent 如何帮助我从零搭建个人主页</h1>
+        <h1>神经算子如何求解 PDE：从 DeepONet 到 Koopman Neural Operator</h1>
         <p class="article-summary">
-          这篇文章记录我如何从几乎没有网页开发经验开始，借助 AI Agent 完成个人主页的规划、实现、检查和总结。
+          这篇文章整理我对神经算子求解偏微分方程的一次阶段性学习：从“学习一个函数到另一个函数的映射”出发，理解 DeepONet、Fourier 思路和 Koopman Neural Operator 的联系。
         </p>
       </header>
 
       <section>
-        <h2>1. 为什么选择这个主题</h2>
+        <h2>1. 为什么关注 PDE 与神经算子</h2>
         <p>
-          这次课程大作业要求我们完成一个个人主页，并在主页中发布第一篇技术博客。对零基础学习者来说，网页开发一开始会显得很陌生：既要理解文件结构，又要知道 HTML、CSS 和部署之间的关系。相比直接复制一整段代码，我更希望通过 AI Agent 的帮助，把任务拆成可以理解的小步骤。
+          偏微分方程广泛出现在流体、热传导、电磁场和材料模拟中。传统数值方法通常需要网格剖分、离散格式和迭代求解，优点是理论清晰、误差可分析，但在高维问题、复杂几何或大量参数重复求解时，计算成本会很高。
+        </p>
+        <p>
+          神经算子试图学习的是“算子”而不只是某个有限维向量之间的映射。也就是说，它希望从输入函数，例如初值、边界条件或系数场，直接预测输出函数，例如 PDE 的解。这个角度很适合和算法基础中的抽象、复杂度、泛化能力一起思考。
         </p>
       </section>
 
       <section>
-        <h2>2. 我的基本思路</h2>
+        <h2>2. DeepONet：用分支网络和主干网络表示算子</h2>
         <p>
-          我把这个项目分成四个阶段：先阅读作业要求，确认必须包含个人简介、博客入口和可访问链接；再设计网页结构；然后生成和修改代码；最后检查页面能否正常打开、链接能否跳转、内容是否符合提交要求。
+          DeepONet 的核心想法是把算子学习拆成两个部分：Branch Net 读取输入函数在若干采样点上的值，提取这个输入函数的特征；Trunk Net 读取待预测位置的坐标，描述输出函数在不同位置上的基函数信息。两者组合后，就可以得到某个位置处的预测值。
         </p>
         <p>
-          这个过程让我意识到，AI Agent 更适合承担“协助者”的角色。它可以快速生成初稿，也可以帮助发现遗漏，但我仍然需要判断内容是否真实、表达是否符合自己，以及最终网页是否真的可用。
-        </p>
-      </section>
-
-      <section>
-        <h2>3. AI Agent 具体帮了什么</h2>
-        <p>
-          在这个项目中，AI Agent 主要帮助我完成了三个方面的工作。第一，它把课程要求整理成了可执行清单。第二，它根据清单生成了网页的基本结构，包括首页、博客页、样式文件和项目说明文档。第三，它帮助我检查链接、页面结构和报告中需要说明的内容。
-        </p>
-        <p>
-          但博客中的个人理解、学习感受和最终取舍不能完全交给 AI。比如我需要自己决定主页展示什么内容、博客要表达什么观点，以及哪些地方还需要替换成真实信息。
+          从算法角度看，DeepONet 很像是在学习一组可组合的表示：一边压缩输入函数的信息，一边描述输出空间的位置结构。它的优点是概念直观，适合理解“函数到函数”的学习任务；困难在于采样点选择、训练数据覆盖范围和泛化能力都会影响最终效果。
         </p>
       </section>
 
       <section>
-        <h2>4. 从零基础角度得到的经验</h2>
+        <h2>3. Fourier Neural Operator：在频域中捕捉全局结构</h2>
         <p>
-          我认为零基础完成这类项目时，最重要的是不要一开始追求复杂框架。使用 HTML、CSS 和少量 JavaScript 就可以完成一个清晰的个人主页。先让网页能打开，再逐步调整布局和文字，比一开始就追求复杂效果更可靠。
+          Fourier Neural Operator 更强调利用频域表示来建模函数之间的全局关系。它通过傅里叶变换把空间信息转换到频域，在频域中学习主要模态的变换，再回到物理空间。这种方法对于许多具有平滑结构或明显全局模式的 PDE 问题很有吸引力。
         </p>
         <p>
-          另外，写 `AGENTS.md` 这样的项目说明文件很有帮助。它相当于告诉 AI：这个项目的目标是什么、哪些文件重要、完成后要检查什么。这样后续继续修改时，AI 不会只看局部代码，而是能围绕整个作业目标工作。
+          这让我联想到算法课程中对表示方式的重视：同一个问题在不同表示空间中难度可能不同。把函数放到频域后，某些全局关联会变得更容易学习，但也需要关注高频信息、边界处理和非周期结构带来的挑战。
         </p>
       </section>
 
       <section>
-        <h2>5. 后续可以改进的地方</h2>
+        <h2>4. Koopman Neural Operator：用线性演化理解非线性系统</h2>
         <p>
-          当前版本已经能满足个人主页和博客入口的基本要求。后续我还可以继续补充真实项目、课程笔记、更多博客文章，并把页面部署到 GitHub Pages。部署完成后，还需要把主页网址和截图整理进作业报告。
+          Koopman 思想的吸引力在于：非线性动力系统在原始空间中很复杂，但如果把状态提升到合适的观测函数空间，系统演化可能近似为线性算子作用。Koopman Neural Operator 就是在神经网络的帮助下学习这种提升空间和演化规律。
+        </p>
+        <p>
+          对 PDE 求解来说，这种思路提供了一种很有启发性的视角：不一定直接在原始变量上硬拟合复杂动力学，而是寻找一个更适合描述演化的空间。它和算法学习中的“换一个数据结构或状态表示，问题会变简单”有相通之处。
+        </p>
+      </section>
+
+      <section>
+        <h2>5. 与算法基础学习的联系</h2>
+        <p>
+          学习神经算子并不意味着可以跳过算法基础。相反，排序、递归、动态规划、矩阵运算、复杂度分析和数值稳定性这些基础，会影响我理解模型结构、训练成本和求解误差的方式。一个模型是否有效，不只看神经网络本身，也要看数据组织、离散方式、计算效率和验证指标。
+        </p>
+        <p>
+          这次用 HTML、CSS 和少量 JavaScript 搭建个人主页，也让我重新体会到“先拆解问题，再逐步实现”的重要性。AI Agent 可以帮助我整理资料、生成网页结构和检查链接，但最终内容是否准确、表达是否真实，仍然需要自己判断。
         </p>
       </section>
 
       <footer class="article-footer">
-        <p>提示：提交前请把这篇文章中的经历和表达改成你自己的真实过程。</p>
+        <p>小结：神经算子为 PDE 快速求解提供了新的思路，但它仍然需要扎实的算法、数值分析和问题建模能力作为基础。</p>
       </footer>
     </article>
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> [你的名字] · First technical blog.</p>
+    <p>© <span id="year"></span> 韩子菲 · First technical blog.</p>
   </footer>
 
   <script src="../script.js"></script>

@@ -1,5 +1,116 @@
-body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-header { background: #f0f0f0; padding: 1em; }
-nav a { margin-right: 1em; text-decoration: none; }
-main { padding: 1em; }
-footer { background: #f0f0f0; text-align: center; padding: 1em; }
+:root {
+  --bg: #080c14;
+  --surface: #121a27;
+  --surface-strong: #182234;
+  --text: #eef6ff;
+  --muted: #a8b7c7;
+  --line: rgba(125, 211, 252, 0.18);
+  --primary: #22d3ee;
+  --accent: #60a5fa;
+  --shadow: 0 22px 60px rgba(0, 0, 0, 0.42);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(34, 211, 238, 0.12), transparent 28%),
+    radial-gradient(circle at 88% 8%, rgba(96, 165, 250, 0.12), transparent 24%),
+    linear-gradient(135deg, #060912 0%, var(--bg) 48%, #0b1020 100%);
+  font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+  line-height: 1.7;
+}
+
+header,
+footer {
+  padding: 1rem clamp(1rem, 6vw, 4rem);
+  background: rgba(8, 12, 20, 0.84);
+  border-color: var(--line);
+  backdrop-filter: blur(16px);
+}
+
+header {
+  border-bottom: 1px solid var(--line);
+}
+
+footer {
+  color: var(--muted);
+  text-align: center;
+  border-top: 1px solid var(--line);
+}
+
+main {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: clamp(2rem, 6vw, 5rem) 0;
+}
+
+section,
+article,
+.card {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(145deg, rgba(24, 34, 52, 0.96), rgba(18, 26, 39, 0.96));
+  box-shadow: var(--shadow);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+}
+
+nav a,
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+nav a:hover,
+a:hover {
+  color: var(--accent);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--text);
+  line-height: 1.2;
+}
+
+p {
+  color: var(--muted);
+}
+
+button,
+.button {
+  min-height: 44px;
+  padding: 0 1rem;
+  color: #041016;
+  border: 0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  box-shadow: 0 0 28px rgba(34, 211, 238, 0.22);
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  header,
+  footer {
+    padding-inline: 1rem;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  main {
+    width: min(100% - 1.25rem, 1120px);
+  }
+}

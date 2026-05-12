@@ -1,13 +1,15 @@
 # handoff.md
 
 ## Current Goal
-完成课程大作业网页初版
+完成课程大作业网页可提交版本
 
 ## Current State
 - 已生成根目录 `index.html`
 - 已生成 `blog/first-blog.html`
 - 已补充全站样式和移动端导航
 - 已更新 AI 工作流说明和检查清单
+- 已替换姓名、邮箱和 GitHub 链接
+- 已将第一篇博客更新为神经算子求解 PDE 主题
 
 ## Files Changed
 - index.html
@@ -19,14 +21,14 @@
 - README.md
 - src/index.html
 - docs/ai/checklist.md
+- docs/ai/handoff.md
 
 ## Verification
 - 页面可访问：✅
-- 首页到博客页跳转：待浏览器验证
-- 博客页返回首页：待浏览器验证
+- 首页到博客页跳转：待验证
+- 博客页返回首页：待验证
 
 ## Open Questions
-- 需要替换真实姓名、邮箱、GitHub 链接。
 - 需要决定最终部署到哪个 GitHub 仓库。
 
 ## Next Step
