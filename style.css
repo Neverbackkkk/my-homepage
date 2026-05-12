@@ -64,6 +64,11 @@ img {
   text-decoration: none;
 }
 
+.brand-spacer {
+  width: 1px;
+  height: 1px;
+}
+
 .site-nav {
   display: flex;
   align-items: center;
@@ -440,7 +445,7 @@ h1 span {
 
 .interest-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 760px);
   gap: 18px;
 }
 
