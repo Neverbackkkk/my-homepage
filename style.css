@@ -166,6 +166,9 @@ h1 span {
   color: var(--primary);
   font-size: clamp(42px, 8vw, 90px);
   line-height: 0.95;
+  overflow-wrap: normal;
+  white-space: nowrap;
+  word-break: keep-all;
 }
 
 .hero-title .title-line-end {
@@ -970,7 +973,7 @@ h1 span {
 
   .hero-title .title-line-center {
     align-self: center;
-    font-size: clamp(30px, 9vw, 42px);
+    font-size: clamp(28px, 8.6vw, 42px);
   }
 
   .hero-copy,
