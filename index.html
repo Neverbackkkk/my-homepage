@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>韩子菲 | 个人主页</title>
   <meta name="description" content="韩子菲的算法基础课程大作业主页，记录课程学习、技术博客与 AI Agent 辅助开发过程。">
-  <link rel="stylesheet" href="style.css?v=20260512-dark">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="stylesheet" href="style.css?v=20260512-cool-light-2">
 </head>
 <body>
   <header class="site-header">
@@ -28,7 +31,7 @@
     <section class="hero">
       <div class="hero-copy">
         <p class="eyebrow">算法基础课程大作业</p>
-        <h1>你好，我是<span>韩子菲</span></h1>
+        <h1>你好，我是 <span>韩子菲</span></h1>
         <p class="hero-text">
           中国科学技术大学计算数学方向在读。这个主页用于展示算法基础课程学习、技术博客写作，以及我使用 AI Agent 辅助整理网页项目的过程。
         </p>
@@ -37,8 +40,31 @@
           <a class="button secondary" href="#projects">查看学习记录</a>
         </div>
       </div>
-      <figure class="hero-media">
-        <img src="assets/study-workspace.png" alt="包含代码、算法节点和学习笔记的桌面插画">
+      <figure class="hero-media" aria-label="蓝灰色几何图形组合">
+        <div class="geometry-board" aria-hidden="true">
+          <span class="geo-plane"></span>
+          <span class="geo-axis axis-x"></span>
+          <span class="geo-axis axis-y"></span>
+          <span class="geo-curve curve-one"></span>
+          <span class="geo-curve curve-two"></span>
+          <span class="geo-orbit orbit-one"></span>
+          <span class="geo-orbit orbit-two"></span>
+          <span class="geo-node node-a"></span>
+          <span class="geo-node node-b"></span>
+          <span class="geo-node node-c"></span>
+          <span class="geo-node node-d"></span>
+          <div class="geo-card geo-card-main">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="geo-card geo-card-small">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
       </figure>
     </section>
 
@@ -95,7 +121,7 @@
           <span>02</span>
           <div>
             <h3>撰写技术博客</h3>
-            <p>围绕神经算子求解 PDE 的学习过程，整理 DeepONet 与 Koopman Neural Operator 的基本思路。</p>
+            <p>围绕神经算子求解 PDE 的学习过程，整理 DeepONet、FNO 与 Koopman Neural Operator 的基本思路。</p>
           </div>
         </article>
         <article class="timeline-item">
@@ -115,10 +141,10 @@
       </div>
       <article class="blog-card">
         <div>
-          <p class="blog-meta">第一篇技术博客 ·神经算子如何求解 PDE：从 DeepONet 到 Koopman Neural Operator 的学习笔记</p>
+          <p class="blog-meta">第一篇技术博客 · 学习笔记</p>
           <h3>神经算子如何求解 PDE：从 DeepONet 到 Koopman Neural Operator 的学习笔记</h3>
           <p>
-            这篇博客记录我对神经算子、算子学习和 PDE 求解的一次阶段性整理，也说明它们与算法基础学习之间的关系。
+            这篇博客从课程学习视角梳理 PDE 求解、神经算子、DeepONet、FNO 和 Koopman Neural Operator 的基本思想，也记录我对多尺度 PDE 难点的初步理解。
           </p>
         </div>
         <a class="button primary" href="blog/first-blog.html">进入博客</a>
@@ -138,7 +164,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> 韩子菲 · Built with HTML, CSS and AI Agent workflow.</p>
+    <p>&copy; <span id="year"></span> 韩子菲 · Built with HTML, CSS and AI Agent workflow.</p>
   </footer>
 
   <script src="script.js"></script>
